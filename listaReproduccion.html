@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Reproducción</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style2.css">
+        <!-- Material Symbols -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400&display=swap">
+    </head>
+    
+    <body>
+        
+        <!-- Music List Section -->
+        <section class="music-list-section">
+            <h5>Lista de Reproducción          <a href="music.html"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+              </svg></a></h5> 
+            <ul data-music-list class="music-list">
+                <!-- Music items will be injected here by JS -->
+            </ul>
+        </section>
+
+        <!-- Player Section -->
+        <div class="player">
+            <img data-player-banner class="player-banner" src="assets/images/classy101.png" alt="Album Poster">
+            <div class="player-info">
+                <h1 data-title class="player-title">Título</h1>
+                <h2 data-album class="player-album">Álbum</h2>
+                <p data-year class="player-year">Año</p>
+                <p data-artist class="player-artist">Artista</p>
+                <p data-duration class="player-duration">Duración</p>
+            </div>
+            <div class="player-controls">
+                <button data-shuffle class="control-btn">
+                    <span class="material-symbols-rounded">shuffle</span>
+                </button>
+                <button data-skip-prev class="control-btn">
+                    <span class="material-symbols-rounded">skip_previous</span>
+                </button>
+                
+                <button data-play-btn class="control-btn">
+                    <span class="material-symbols-rounded default-icon">play_arrow</span>
+                    <span class="material-symbols-rounded active-icon">pause</span>
+                </button>
+                <button data-skip-next class="control-btn">
+                    <span class="material-symbols-rounded">skip_next</span>
+                </button>
+                
+                <button data-repeat class="control-btn">
+                    <span class="material-symbols-rounded default-icon">repeat</span>
+                    <span class="material-symbols-rounded active-icon">repeat_one</span>
+                </button>
+            </div>
+            <div class="player-seek">
+                <input type="range" data-seek class="seek-range" min="0" max="100" value="0">
+                <div data-range-fill class="range-fill"></div>
+                <p data-running-time class="running-time">0:00</p>
+            </div>
+            <div class="player-volume">
+                <button data-volume-btn class="volume-btn">
+                    <span class="material-symbols-rounded">volume_up</span>
+                </button>
+                <input type="range" data-volume class="volume-range" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+
+        <script src="assets/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,337 @@
+/* General Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, black, orange);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Player Styles */
+.player {
+  background: #222;
+  padding-top: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 85%; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 2px solid #555;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+.player-banner {
+  width: 150px; /* Adjusted for mobile */
+  height: 150px; /* Adjusted for mobile */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.player-info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.player-title,
+.player-album,
+.player-year,
+.player-artist,
+.player-duration {
+  margin: 5px 0;
+}
+
+.player-controls {
+  display: flex;
+  flex-wrap: wrap; /* Adjust for smaller screens */
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Exchange Play and Next Button Styles */
+.control-btn {
+  background: #555;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px; /* Adjusted for mobile */
+  display: grid;
+  place-items: center;
+}
+
+.control-btn:hover {
+  background: #444;
+}
+
+.default-icon {
+  display: block;
+}
+
+.active-icon {
+  display: none;
+}
+
+.control-btn.active .default-icon {
+  display: none;
+}
+
+.control-btn.active .active-icon {
+  display: block;
+}
+
+/* Play Button Styles */
+.control-play {
+  order: 2; /* Move the play button to the right */
+}
+
+/* Next Button Styles */
+.control-next {
+  order: 1; /* Move the next button to the left */
+}
+
+.player-seek {
+  display: flex;
+  flex-direction: column; /* Adjust for mobile */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.seek-range {
+  width: 100%; /* Make seek range full width */
+  margin-bottom: 5px;
+}
+
+.range-fill {
+  position: absolute;
+  height: 6px;
+  background: #ff5722;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.running-time {
+  margin-top: 5px;
+}
+
+.player-volume {
+  display: flex;
+  flex-direction: column; /* Adjust for mobile */
+  align-items: center;
+}
+
+.volume-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px; /* Adjusted for mobile */
+  margin-bottom: 5px;
+}
+
+.volume-range {
+  width: 80px; /* Adjusted for mobile */
+}
+
+/* Music List Styles */
+.music-list-section {
+  flex: 1;
+  padding: 10px; /* Adjusted padding */
+  overflow-y: auto;
+  width: 100%; /* Full width for mobile */
+}
+
+.music-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.music-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background: #444;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.music-item:hover {
+  background: #555;
+}
+
+.music-item img {
+  border-radius: 5px;
+  width: 50px; /* Adjusted for mobile */
+  height: 50px; /* Adjusted for mobile */
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-info h3 {
+  margin: 0;
+  font-size: 0.9em; /* Adjusted font size */
+}
+
+.item-info p {
+  margin: 0;
+  font-size: 0.7em; /* Adjusted font size */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+/* Icon Font Styles */
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' -25, 'opsz' 24;
+  font-family: 'Material Symbols Rounded', sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Only show play or pause button */
+.control-btn.play::before {
+  content: 'Play'; /* Use appropriate icon */
+}
+
+.control-btn.pause::before {
+  content: 'Pause'; /* Use appropriate icon */
+}
+
+/* Control Button Styles */
+.control-btn {
+  background: #555;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px; /* Adjust icon size */
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.control-btn:hover {
+  background: #444;
+}
+
+/* Icon Styles */
+.control-btn .default-icon,
+.control-btn .active-icon {
+  display: none; /* Oculta ambos íconos por defecto */
+}
+
+/* Mostrar solo el ícono activo según la clase del botón */
+.control-btn.play .default-icon {
+  display: block; /* Mostrar ícono de reproducción por defecto */
+}
+
+.control-btn.pause .active-icon {
+  display: none; /* Mostrar ícono activo de pausa */
+}
+
+/* Ajuste del contenido de íconos */
+.control-btn.play::before {
+  content: 'Play'; /* Ajustar el contenido del ícono para Play */
+}
+
+.control-btn.pause::before {
+  content: 'Pause'; /* Ajustar el contenido del ícono para Pause */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .music-list-section {
+    display: none;
+  }
+  .player {
+    width: 100vh; /* Full width on small screens */
+    height: auto; /* Adjust height */
+    position: relative; /* No fixed positioning */
+    border-left: none; /* Remove left border */
+  }
+
+  .player-banner {
+    width: 120px; /* Smaller banner */
+    height: 120px; /* Smaller banner */
+  }
+
+  .player-controls {
+    flex-direction: row; /* Stack controls vertically */
+    align-items: center;
+  }
+  .player-volume {
+    flex-direction: row; /* Stack controls vertically */
+    align-items: center;
+  }
+
+  .control-btn {
+    font-size: 20px; /* Smaller icon size */
+    padding: 8px; /* Smaller padding */
+  }
+
+  .player-seek {
+    flex-direction: column; /* Stack seek range and time vertically */
+    align-items: center;
+  }
+
+  .seek-range {
+    width: 100%;
+  }
+
+  .volume-range {
+    width: 60px; /* Smaller volume range */
+  }
+
+  .music-item {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    padding: 8px; /* Smaller padding */
+  }
+
+  .music-item img {
+    width: 40px; /* Smaller image */
+    height: 40px; /* Smaller image */
+  }
+}
